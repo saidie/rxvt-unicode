@@ -72,4 +72,4 @@ package() {
   done
 }
 
-# vim:set ts=2 sw=2 ft=sh et:
+# vim:set ts=2 sw=2 et:
