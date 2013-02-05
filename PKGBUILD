@@ -1,4 +1,4 @@
-# Maintainer: Sébastien Luttringer <seblu@archlinux.org>
+# Maintainer: Sébastien Luttringer
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: tobias <tobias@archlinux.org>
 # Contributor: dibblethewrecker dibblethewrecker.at.jiwe.dot.org
