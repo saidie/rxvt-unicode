@@ -5,12 +5,12 @@
 
 pkgname=rxvt-unicode
 pkgver=9.18
-pkgrel=2
+pkgrel=3
 pkgdesc='An unicode enabled rxvt-clone terminal emulator (urxvt)'
 arch=('i686' 'x86_64')
 url='http://software.schmorp.de/pkg/rxvt-unicode.html'
 license=('GPL')
-depends=('libxft' 'gdk-pixbuf2' 'perl' 'startup-notification')
+depends=('libxft' 'perl' 'startup-notification')
 optdepends=('gtk2-perl: to use the urxvt-tabbed')
 source=(
   "http://dist.schmorp.de/rxvt-unicode/$pkgname-$pkgver.tar.bz2"
@@ -38,7 +38,6 @@ build() {
     --enable-mousewheel \
     --enable-next-scroll \
     --enable-perl \
-    --enable-pixbuf \
     --enable-pointer-blank \
     --enable-rxvt-scroll \
     --enable-selectionscrolling \
@@ -52,6 +51,7 @@ build() {
     --enable-xft \
     --enable-xim \
     --enable-xterm-scroll \
+    --disable-pixbuf \
     --disable-frills
   make
 }
