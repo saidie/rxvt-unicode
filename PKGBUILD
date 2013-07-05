@@ -5,7 +5,7 @@
 
 pkgname=rxvt-unicode
 pkgver=9.18
-pkgrel=5
+pkgrel=6
 pkgdesc='An unicode enabled rxvt-clone terminal emulator (urxvt)'
 arch=('i686' 'x86_64')
 url='http://software.schmorp.de/pkg/rxvt-unicode.html'
@@ -31,6 +31,7 @@ prepare() {
 
 build() {
   cd $pkgname-$pkgver
+  # we disable smart-resize (FS#34807)
   ./configure \
     --prefix=/usr \
     --with-terminfo=/usr/share/terminfo \
@@ -48,7 +49,7 @@ build() {
     --enable-rxvt-scroll \
     --enable-selectionscrolling \
     --enable-slipwheeling \
-    --enable-smart-resize \
+    --disable-smart-resize \
     --enable-startup-notification \
     --enable-transparency \
     --enable-unicode3 \
