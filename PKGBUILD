@@ -25,7 +25,7 @@ makedepends=(
 )
 source=("$pkgname-$pkgver.tar.bz2::http://dist.schmorp.de/rxvt-unicode/$pkgname-$pkgver.tar.bz2"
         "$pkgname-$pkgver.tar.bz2.signature::http://dist.schmorp.de/rxvt-unicode/$pkgname-$pkgver.tar.bz2.sig"
-        "$pkgname-$pkgver.pub::http://dist.schmorp.de/signing-key.pub"
+        'signing-key.pub'
         'perl-5.38.patch'
         'urxvt.desktop'
         'urxvtc.desktop'
@@ -48,7 +48,7 @@ sha512sums=('4d14ecbbb62de1b1c717277f5aae5cfb536e11392f2d4b82c884c1713f437fce8e9
 prepare() {
   # hacking around to validate with signify
   mv -v "$pkgname-$pkgver.tar.bz2."{signature,sig}
-  signify -V -p "$pkgname-$pkgver.pub" -m "$pkgname-$pkgver.tar.bz2"
+  signify -V -p "signing-key.pub" -m "$pkgname-$pkgver.tar.bz2"
 
   patch -d $pkgname-$pkgver -p1 < perl-5.38.patch # Locale fix for perl 5.38
 }
